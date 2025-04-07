@@ -2,32 +2,11 @@
 namespace App\Models;
 
 use App\Core\Database;
+use App\Core\Model;
 
-class BlogPost
+class BlogPost extends Model
 {
-
-    private Database $db;
-
-    public function __construct()
-    {
-        $this->db = new Database();
-    }
-
-    public function getAllPosts()
-    {
-        $this->db->query("SELECT * FROM blogpost");
-        $this->db->execute();
-        return $this->db->results();
-    }
-
-    public function addPost($title, $author, $content)
-    {
-        $this->db->query("INSERT INTO blogpost (title, author, content) VALUES (:title, :author, :content);");
-        $this->db->bind(':title', $title);
-        $this->db->bind(':author', $author);
-        $this->db->bind(':content', $content);
-        $this->db->execute();
-    }
+    protected string $table = 'blogpost';
 
     // TODO: implement update, getByID, delete
 }

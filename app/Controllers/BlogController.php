@@ -16,7 +16,7 @@ class BlogController extends Controller
     // Render the default page 
     public function index()
     {
-        $posts = $this->model->getAllPosts();
+        $posts = $this->model->getAll();
         $this->view('blog/index', ['title' => 'János\' blog', 'posts' => $posts]);
     }
 

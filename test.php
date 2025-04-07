@@ -1,11 +1,6 @@
 <?php
-$a = [1, 2, 3];
+use App\Models\BlogPost;
 
-unset($a[0]);
-unset($a[1]);
+$blog = new BlogPost();
 
-if ($a) {
-    echo 'not empty' . $a[1];
-} else {
-    echo 'empty';
-}
+$blog->create(["field" => "value"]);
