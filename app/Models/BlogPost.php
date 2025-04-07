@@ -7,5 +7,5 @@ class BlogPost extends Model
 {
     protected string $table = 'blogpost';
 
-    // TODO: implement update, getByID, delete
+    // TODO: implement update, delete
 }

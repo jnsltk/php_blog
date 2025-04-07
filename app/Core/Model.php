@@ -42,5 +42,5 @@ abstract class Model
         return $this->db->execute();
     }
 
-    // TODO: implement update, getByID, delete
+    // TODO: implement update, delete
 }
