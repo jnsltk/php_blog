@@ -21,6 +21,13 @@ abstract class Model
         return $this->db->results();
     }
 
+    public function getByID(string $id)
+    {
+        $this->db->query("SELECT * FROM {$this->table} WHERE id={$id};");
+        $this->db->execute();
+        return $this->db->results();
+    }
+
     public function create(array $data)
     {
         $fields = array_keys($data);

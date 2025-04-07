@@ -11,4 +11,4 @@ define('DB_NAME', 'blog_db');
 define('DB_PORT', '3306');
 
 /* --------------------------------- Others --------------------------------- */
-define('BASE_URL', 'http://blog.test/public/');
+define('BASE_URL', 'http://blog.test/');

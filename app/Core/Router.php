@@ -5,7 +5,7 @@ namespace App\Core;
 class Router
 {
     /* -------------------------------- Defaults -------------------------------- */
-    protected string $controller = 'BlogController';
+    protected string $controller = 'App\\Controllers\\BlogController';
     protected string $method = 'index';
     protected array $params = [];
 
@@ -25,7 +25,7 @@ class Router
             }
         }
 
-        $controllerClass = 'App\\Controllers\\' . $this->controller;
+        $controllerClass = $this->controller;
         $controllerObject = new $controllerClass;
 
         // Resolve method
