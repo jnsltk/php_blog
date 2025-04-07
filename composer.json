@@ -1,0 +1,19 @@
+{
+    "name": "jnsltk/blog",
+    "description": "My personal website and blog.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jnsltk",
+            "email": "janos.litkei@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

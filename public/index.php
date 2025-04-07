@@ -1,25 +1,14 @@
 <?php
-$pageTitle = 'János\'s blog';
-?>
 
-<!DOCTYPE html>
-<html lang="en">
+/* -------------------------------- Constants ------------------------------- */
+define('APPROOT', dirname(__DIR__) . '/app/');
+define('VIEWROOT', APPROOT . 'Views/');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $pageTitle ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+// Load composer autoload
+require_once __DIR__ . '/../vendor/autoload.php';
+// Load config file
+require_once __DIR__ . '/../app/Config/config.php';
 
-<body>
-    <?php require_once '../includes/header.php'; ?>
-    <div class="container">
-        <header class="mt-4">
-            <h3>Blog post</h3>
-        </header>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+use App\Core\App;
 
-</html>
+$app = new App();
