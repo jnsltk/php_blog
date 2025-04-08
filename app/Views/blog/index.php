@@ -1,8 +1,8 @@
 <h1 class="mb-8 text-3xl font-bold">Recent posts</h1>
 <?php foreach ($posts as $post): ?>
     <article class="mb-8 max-w-4/5">
-        <h2 class="mb-2 text-lg font-bold transition-colors duration-300 hover:text-blue-700">
-            <a href="<?= BASE_URL . "?url=blog/posts/" . $post['id'] ?>">
+        <h2 class="mb-2 text-lg font-bold">
+            <a class="transition-colors duration-300  hover:text-blue-700" href="<?= BASE_URL . "?url=blog/posts/" . $post['id'] ?>">
                 <?= htmlspecialchars($post['title']) ?>
             </a>
         </h2>
