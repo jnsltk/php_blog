@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /* -------------------------------- Constants ------------------------------- */
 define('APPROOT', dirname(__DIR__) . '/app/');
