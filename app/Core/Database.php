@@ -17,21 +17,9 @@ class Database
     private PDOStatement|bool $stmt; // Database statement -- PDOStatement
     private string $error; // Error message -- PDOException
 
-    public function __construct()
+    public function __construct(PDO $pdo)
     {
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';port=' . $this->dbport;
-
-        $options = [
-            PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ];
-
-        try {
-            $this->dbh = new PDO($dsn, $this->user, $this->password, $options);
-        } catch (PDOException $e) {
-            $this->error = $e->getMessage();
-            die("Database Connection Error: " . $this->error);
-        }
+        $this->dbh = $pdo;
     }
 
     /* ---------------------------- Public functions ---------------------------- */

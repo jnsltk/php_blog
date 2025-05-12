@@ -8,6 +8,12 @@ class Router
     protected string $controller = 'App\\Controllers\\BlogController';
     protected string $method = 'index';
     protected array $params = [];
+    protected Database $db;
+
+    public function __construct(Database $db)
+    {
+        $this->db = $db;
+    }
 
     /* --------------------------------- Methods -------------------------------- */
     public function dispatch()
@@ -26,7 +32,7 @@ class Router
         }
 
         $controllerClass = $this->controller;
-        $controllerObject = new $controllerClass;
+        $controllerObject = new $controllerClass($this->db);
 
         // Resolve method
         if (isset($url[1])) {

@@ -9,9 +9,9 @@ abstract class Model
     protected Database $db;
     protected string $table;
 
-    public function __construct()
+    public function __construct(Database $db)
     {
-        $this->db = new Database();
+        $this->db = $db;
     }
 
     public function getAll()

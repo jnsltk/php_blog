@@ -2,15 +2,16 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Core\Database;
 use App\Models\BlogPost;
 
 class BlogController extends Controller
 {
     private BlogPost $model;
 
-    public function __construct()
+    public function __construct(Database $db)
     {
-        $this->model = new BlogPost();
+        $this->model = new BlogPost($db);
     }
 
     // Render the default page 
