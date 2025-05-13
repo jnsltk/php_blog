@@ -7,15 +7,8 @@ use PDOStatement;
 
 class Database
 {
-    private string $host = DB_HOST;
-    private string $user = DB_USER;
-    private string $password = DB_PASSWORD;
-    private string $dbname = DB_NAME;
-    private string $dbport = DB_PORT;
-
     private PDO $dbh; // Database handler -- PDO
     private PDOStatement|bool $stmt; // Database statement -- PDOStatement
-    private string $error; // Error message -- PDOException
 
     public function __construct(PDO $pdo)
     {

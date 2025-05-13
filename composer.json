@@ -19,7 +19,11 @@
         }
     },
     "require-dev": {
-        "filp/whoops": "^2.18",
-        "phpunit/phpunit": "^12.1"
+        "filp/whoops": "^2.18"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }

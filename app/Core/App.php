@@ -6,21 +6,18 @@ use PDO;
 
 class App
 {
-    protected Router $router;
+    private Container $container;
+    private Router $router;
 
-    public function __construct()
+    public function __construct(Container $container)
     {
-        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';port=' . DB_PORT;
+        $this->container = $container;
 
-        $options = [
-            PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ];
+        $this->router = $this->container->get('router');
+    }
 
-        $pdo = new PDO($dsn, DB_USER, DB_PASSWORD, $options);
-        $db = new Database($pdo);
-
-        $this->router = new Router($db);
+    public function run()
+    {
         $this->router->dispatch();
     }
 }

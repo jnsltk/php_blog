@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /* -------------------------------- Constants ------------------------------- */
@@ -28,6 +29,38 @@ if ($env == 'development' && class_exists(\Whoops\Run::class)) {
 }
 
 /* ------------------------------ Bootstrap app ----------------------------- */
-use App\Core\App;
 
-$app = new App();
+use App\Core\App;
+use App\Core\Container;
+use App\Core\Database;
+use App\Core\Router;
+
+$container = new Container();
+
+// Register services
+$container->register('pdo', function ($container) {
+    return new PDO(
+        'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';port=' . DB_PORT,
+        DB_USER,
+        DB_PASSWORD,
+        [
+            PDO::ATTR_PERSISTENT => true,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]
+    );
+});
+
+$container->register('database', function($container) {
+    return new Database($container->get('pdo'));
+});
+
+$container->register('router', function($container) {
+    return new Router($container->get('database'));
+});
+
+$container->register('app', function($container) {
+    return new App($container);
+});
+
+$app = $container->get('app');
+$app->run();
