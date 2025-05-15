@@ -45,14 +45,5 @@ abstract class TestCase extends BaseTestCase
                 date_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
             );
         ');
-
-        $pdo->exec("
-            INSERT INTO blogpost (title, author, content)
-                VALUES (
-                    'Test post',
-                    'Tester',
-                    'Test content'
-                );
-        ");
     }
 }
