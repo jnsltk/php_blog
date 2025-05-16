@@ -24,7 +24,7 @@ class BlogController extends Controller
     // Render individual post
     public function posts(string $id)
     {
-        $post = $this->model->getByID($id)[0];
+        $post = $this->model->getByID($id);
         $this->view('blog/posts', ['title' => 'János\' blog', 'post' => $post]);
     }
 

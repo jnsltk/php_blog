@@ -124,9 +124,6 @@ describe('query', function () {
         $result = $db->result();
 
         expect($result)->toBeArray();
-        foreach ($result as $r) {
-            echo $r;
-        }
         expect(count($result))->toBe(5);
         expect($result['title'])->toBe('Test1');
     });

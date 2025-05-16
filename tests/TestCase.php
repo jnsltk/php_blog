@@ -32,6 +32,10 @@ abstract class TestCase extends BaseTestCase
         $this->container->register('database', function ($container) {
             return new \App\Core\Database($container->get('pdo'));
         });
+
+        $this->container->register('blogpost_model', function ($container) {
+            return new \App\Models\BlogPost($container->get('database'));
+        });
     }
 
     protected function setupTestDatabase(\PDO $pdo)

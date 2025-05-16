@@ -8,4 +8,7 @@ class BlogPost extends Model
     protected string $table = 'blogpost';
 
     // TODO: implement update, delete
+    public function getTable() {
+        return $this->table;
+    }
 }
