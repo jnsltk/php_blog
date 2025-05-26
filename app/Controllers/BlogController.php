@@ -14,15 +14,23 @@ class BlogController extends Controller
         $this->model = new BlogPost($db);
     }
 
-    // Render the default page 
-    public function index()
+    /**
+     * Render the default page 
+     *
+     * @return void
+     */
+    public function index(): void
     {
         $posts = $this->model->getAll();
         $this->view('blog/index', ['title' => 'Home | János\' blog', 'posts' => $posts]);
     }
 
-    // Render individual post
-    public function posts(string $id)
+    /**
+     * Render individual post
+     *
+     * @return void
+     */
+    public function posts(string $id): void
     {
         $post = $this->model->getByID($id);
         $this->view('blog/posts', ['title' => 'János\' blog', 'post' => $post]);

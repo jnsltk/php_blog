@@ -11,8 +11,8 @@
 |
 */
 
-// pest()->extend(Tests\TestCase::class)->in('Feature');
-pest()->extend(Tests\TestCase::class)->in('Unit');
+pest()->extend(Tests\FeatureTestCase::class)->in('Feature');
+pest()->extend(Tests\UnitTestCase::class)->in('Unit');
 
 /*
 |--------------------------------------------------------------------------

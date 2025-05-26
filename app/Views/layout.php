@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-</html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,9 +9,9 @@
 </head>
 
 <body>
-    <?php require_once VIEWROOT . "partials/header.php"; ?>
+    <?php require VIEWROOT . "partials/header.php"; ?>
     <div class="px-6 pt-24 md:px-0 md:max-w-5/8 md:mx-auto">
-        <?php require_once VIEWROOT . $viewPath . '.php'; ?>
+        <?php require VIEWROOT . $viewPath . '.php'; ?>
     </div>
 </body>
 

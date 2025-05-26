@@ -25,7 +25,7 @@ describe('BlogPost model', function () {
 
         expect($resultStatus)->toBeTrue();
     });
-    
+
     it('can retrieve all blogposts', function () {
         $model = $this->container->get('blogpost_model');
         $data1 = ['title' => 'My amazing post #1', 'author' => 'Me', 'content' => 'The contents of my amazing post'];
@@ -54,7 +54,7 @@ describe('BlogPost model', function () {
 
         expect($resultStatus1)->toBeTrue();
         expect($resultStatus2)->toBeTrue();
-        
+
         $result = $model->getByID('1');
         expect($result)->not->toBeFalse();
         expect(count($result))->toBe(5);

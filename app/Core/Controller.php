@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Core;
 
 class Controller
@@ -9,7 +10,8 @@ class Controller
 
         $title = $data['title'] ?? 'János Litkei';
 
-        // layout.php uses require_once to include $viewPath
-        require_once VIEWROOT . 'layout.php';
+        // layout.php uses require to include $viewPath
+        require VIEWROOT . 'layout.php';
     }
 }
+
